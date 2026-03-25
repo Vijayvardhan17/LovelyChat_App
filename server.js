@@ -14,13 +14,11 @@ const chatHistory = [];
 io.on("connection", (socket) => {
     console.log("User connected:", socket.id);
 
-    // Send chat history to the new client
     socket.emit("chat history", chatHistory);
 
-    // Listen for new messages
     socket.on("chat message", (data) => {
         const messageData = {
-            id: socket.id,       // unique sender ID
+            id: socket.id,
             username: data.username,
             msg: data.msg,
             timestamp: data.timestamp || new Date().toLocaleTimeString()
