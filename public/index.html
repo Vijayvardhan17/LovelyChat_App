@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lovely Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<h2>Lovely💌</h2>
+<div id="heart-background"></div>
+
+<!-- LOGIN -->
+<div id="login-screen">
+    <h3>Join Chat 💕</h3>
+    <input id="login-username" placeholder="Enter your name">
+    <input id="login-room" placeholder="Enter room passcode">
+    <button onclick="joinChat()">Join 💌</button>
+</div>
+
+<!-- CHAT -->
+<div id="chat-container" style="display:none;">
+
+    <div id="user-count">👥 0 users online</div>
+
+    <ul id="messages"></ul>
+
+    <button onclick="clearChat()" class="clear-btn">🚮</button>
+
+
+    <!-- INPUT BAR -->
+    <div class="chat-input">
+        <button onclick="toggleEmoji()">😊</button>
+
+        <input type="file" id="imageInput" hidden>
+        <button onclick="document.getElementById('imageInput').click()">📷</button>
+
+        <input id="input" placeholder="Type a message...">
+
+        <button class="send-btn" onclick="sendMessage()">➤</button>
+    </div>
+
+    <!-- EMOJI PANEL -->
+     <div id="emoji-panel" style="display:none;">
+        <span>👋</span><span>❤️</span><span>😂</span><span>😎</span>
+        <span>😭</span><span>😡</span><span>😘</span><span>👍</span>
+        <span>🫂</span><span>🫣</span><span>💖</span><span>💕</span>
+        <span>🙌</span><span>😜</span><span>🤩</span><span>😇</span>
+        <span>💋</span><span>🥵</span><span>🔥</span><span>🤦‍♂️</span>
+        <span>🤣</span><span>👌</span><span>😒</span><span>😑</span>
+        <span>🥱</span><span>🫠</span><span>🐼</span><span>🦍</span>
+    </div>
+
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
